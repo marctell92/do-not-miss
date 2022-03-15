@@ -101,7 +101,8 @@ def logout():
 
 @app.route("/add_festival")
 def add_festival():
-    return render_template("add_festival.html")
+    countries = mongo.db.countries.find().sort("country_name", 1)
+    return render_template("add_festival.html", countries=countries)
 
 
 if __name__ == "__main__":
