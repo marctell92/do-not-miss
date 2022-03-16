@@ -113,12 +113,21 @@ def add_festival():
         mongo.db.festivals.insert_one(festival)
         flash("Festival successfully added!")
         return redirect(url_for("get_festivals"))
-        
+
     countries = mongo.db.countries.find().sort("country_name", 1)
     return render_template("add_festival.html", countries=countries)
+
+
+@app.route("/edit_festival/<festival_id>", methods=["GET", "POST"])
+def edit_festival(festival_id):
+    festival = mongo.db.festival.find_one({"_id": ObjectId(festival_id)})
+    countries = mongo.db.countries.find().sort("country_name", 1)
+    return render_template("edit_festival.html", festival=festival, countries=countries)
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
+task
