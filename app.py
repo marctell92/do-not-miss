@@ -99,8 +99,21 @@ def logout():
     return redirect(url_for("login"))
     
 
-@app.route("/add_festival")
+@app.route("/add_festival", methods=["GET", "POST"])
 def add_festival():
+    if request.method == "POST":
+        festival = {
+            "country_name": request.form.get("country_name"),
+            "festival_name": request.form.get("festival_name"),
+            "festival_dates": request.form.get("festival_dates"),
+            "festival_djs": request.form.get("festival_djs"),
+            "festival_location": request.form.get("festival_location"),
+            "created_by": session["user"]
+        }
+        mongo.db.festivals.insert_one(festival)
+        flash("Festival successfully added!")
+        return redirect(url_for("get_festivals"))
+        
     countries = mongo.db.countries.find().sort("country_name", 1)
     return render_template("add_festival.html", countries=countries)
 
