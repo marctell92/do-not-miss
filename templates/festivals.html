@@ -7,9 +7,11 @@
           <div class="collapsible-header">
               <i class="fas fa-caret-down"></i>
               <p><strong>{{ festival.festival_name }}</strong> {{ festival.festival_dates }}</p>
+              {% if session.user == "marctell92" %}
               <div class="col s3">
                 <a href="{{ url_for('edit_festival', festival_id=festival._id) }}" class="btn-small">Edit</a>    
               </div>
+              {% endif %}
           </div>
           <div class="collapsible-body">
               <p>Location: {{ festival.festival_location }}</p>

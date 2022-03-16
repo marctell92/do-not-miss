@@ -61,10 +61,10 @@ def login():
             # ensure hashed password matches user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
                             request.form.get("username")))
-                        return redirect(url_for(
+                return redirect(url_for(
                             "profile", username=session["user"]))
             else:
                 # invalid password match
@@ -97,7 +97,7 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
-    
+
 
 @app.route("/add_festival", methods=["GET", "POST"])
 def add_festival():
@@ -120,14 +120,26 @@ def add_festival():
 
 @app.route("/edit_festival/<festival_id>", methods=["GET", "POST"])
 def edit_festival(festival_id):
-    festival = mongo.db.festival.find_one({"_id": ObjectId(festival_id)})
+    if request.method == "POST":
+        submit = {
+            "country_name": request.form.get("country_name"),
+            "festival_name": request.form.get("festival_name"),
+            "festival_dates": request.form.get("festival_dates"),
+            "festival_djs": request.form.get("festival_djs"),
+            "festival_location": request.form.get("festival_location"),
+            "created_by": session["user"]
+        }
+        mongo.db.festivals.update_one({"_id": ObjectId(festival_id)}, {'$set': submit })
+        flash("Festival successsfully updated!")
+
+    festival = mongo.db.festivals.find_one({"_id": ObjectId(festival_id)})
+
     countries = mongo.db.countries.find().sort("country_name", 1)
-    return render_template("edit_festival.html", festival=festival, countries=countries)
+    return render_template(
+        "edit_festival.html", festival=festival, countries=countries)
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
-task
