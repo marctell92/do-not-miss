@@ -7,7 +7,10 @@
           <div class="collapsible-header">
               <i class="fas fa-caret-down"></i>
               <p><strong>{{ festival.festival_name }}</strong> {{ festival.festival_dates }}</p>
-            </div>
+              <div class="col s3">
+                <a href="" class="btn-small green accent-4">Edit</a>
+              </div>
+          </div>
           <div class="collapsible-body">
               <p>Location: {{ festival.festival_location }}</p>
               <p>Lineup: {{ festival.festival_djs }}</p>
