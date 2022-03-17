@@ -21,7 +21,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_festivals")
 def get_festivals():
-    festivals = mongo.db.festivals.find()
+    festivals = list(mongo.db.festivals.find())
     return render_template("festivals.html", festivals=festivals)
 
 
@@ -136,7 +136,8 @@ def edit_festival(festival_id):
             "festival_location": request.form.get("festival_location"),
             "created_by": session["user"]
         }
-        mongo.db.festivals.update_one({"_id": ObjectId(festival_id)}, {'$set': submit })
+        mongo.db.festivals.update_one(
+            {"_id": ObjectId(festival_id)}, {'$set': submit})
         flash("Festival successsfully updated!")
 
     festival = mongo.db.festivals.find_one({"_id": ObjectId(festival_id)})
@@ -151,7 +152,6 @@ def delete_festival(festival_id):
     mongo.db.festivals.delete_one({"_id": ObjectId(festival_id)})
     flash("Festival successfully deleted")
     return redirect(url_for("get_festivals"))
-
 
 
 @app.route("/get_countries")
@@ -179,7 +179,8 @@ def edit_country(country_id):
         submit = {
             "country_name": request.form.get("country_name")
         }
-        mongo.db.countries.update_one({"_id": ObjectId(country_id)}, {'$set': submit })
+        mongo.db.countries.update_one(
+            {"_id": ObjectId(country_id)}, {'$set': submit})
         flash("Country successfully updated")
         return redirect(url_for("get_countries"))
 

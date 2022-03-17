@@ -1,108 +1,213 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# DoNotMiss
 
-Welcome marctell92,
+![alt](readme-images/am-i-responsive.JPG)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[Visit site here](https://do-not-miss.herokuapp.com/)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
+This website offers basic information about the main EDM festivals around the globe such as the location, dates and artists. It aims to be a guide to all Electronic Dance Music fans who are in search of the main events in the world.
+This website is mobile-first design and it's fully responsive and accessible on a vast range of devices, making it easy to navigate for all kinds of users.
+ 
+## User Experience (UX)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### Strategy Plane
+#### Target audience for EDMfestivalsEU:
 
-`python3 -m http.server`
+- Users aged 16-40, given the fact that Electronic Dance Music is more extensive between this age range.
+- Users interested in Electronic Dance Music.
+- Users interested in music events, specially big festivals.
+- Users interested in planning their vacation or weekend getaway around a music festival in Europe.
+- Users interested in finding information about an specific festival.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+#### Business Goals
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Allow users to find the best EDM festivals in Europe.
+Present the website on a user-friendly form, where information can be absorbed easily.
+Help the user understand the information displayed within the first visit to the website.
+Allow users to add any festivals to the database.
+Allow admin to edit and delete information from the database.
 
-A blue button should appear to click: _Make Public_,
+#### User stories 
+- ##### As a First Time Visitor, I want to...
+    - Easily understand the content in order to find the information I'm looking for.
+    - Easily navigate and find content through the website in an user-friendly way.
+    - Find visual resources that support and complement the content.
 
-Another blue button should appear to click: _Open Browser_.
+- ##### As a Returning Visitor, I want to...
+    - Find the familiar interface and layout which I already experienced.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+#### Features consideration
 
-To log into the Heroku toolbelt CLI:
+We've used the below table to consider which features was worth adding, considering their
+importance and the viability of implementing them. The ones highlighted in red were left on the side 
+to be considered in the future.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+![alt](readme-images/features.JPG)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Scope Plane
 
-------
+Minimal Viable Product for this project is a website with at least the below features;
 
-## Release History
+- Navigation Bar on desktop and tablet screen, hamburger on mobile.
+- Social Media Links
+- Interactivity unfolding the list of festivals for each country.
+- Ability to perform CRUD in the database.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Structure Plane
+- The user can navigate through the different sections of the page
+using a navigation bar on desktop and tablet screen versions.
+- The user can navigate through the different sections of the page
+using a hamburger on mobile screen versions.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Skeleton Plane
+- Mobile Screen
+    - ![alt](wireframes/ms2.edmfestivalseu.mobile.png)
+- Tablet Screen
+    - ![alt](wireframes/ms2.edmfestivalseu.tablet.png)
+- Desktop Screen
+    - ![alt](wireframes/ms2.edmfestivalseu.desktop.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Surface Plane
+This website aims to give a festival lights feeling.
+Creative design has been applied in order to adapt to this look and feel.
+ 
+- Colors: #4e1f32, #e78ba8, #dedede
+- Fonts: Chakra Petch and Bai Jamjuree
+- Images
+    - The Hero image aims to set the color palette of the website and give a festival crowd feeling.
+    - Country images aim to allow the user to identify hich country is going to be selected.
+    - Festival images aim to reflect the ambience on each festival.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+    ## Features
+### Existing Features
+- Responsive on all devices: allows the user to navigate comfortably on the page regardless of the device type used.
+- Navigation Bar and hamburger: allows the user to navigate through the web sections and pages with ease.
+- Add, edit and delete buttons, as well as search tab, allows user to perform CRUD actions
+- Footer: allows users to access the different social media channels of DoNotMiss.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Technologies Used
+### Languages
+- HTML5
+- CSS3
+- Javascript
+- Python
+- MongoDB
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Frameworks, Libraries & Programs Used
+- [Github](https://github.com/): used to store the projects code.
+- [Gitpod](https://gitpod.io/workspaces): used for version control.
+- [Materialize 1.0.0](https://materializecss.com/about.html): used to assist with the responsiveness and styling of the website.
+- [Balsamiq](https://balsamiq.com/): used for wireframe design.
+- [jQuery v3.5.1](https://jquery.com/): used to implement interactivity on the page.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/): used for the development of the app.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Testing
+### W3C Markup Validator and W3C CSS Validator
+- W3C Markup Validator
+    - ![alt](readme-images/w3c-markup-validator.JPG)
+- W3C CSS Validator
+    - ![alt](readme-images/w3c-css-validator.JPG)
+- Jshint JavaScript Validator
+    - ![alt](readme-images/maps-js-validator.JPG)
+    - ![alt](readme-images/script-js-validation.JPG)
+    - ![alt](readme-images/email-js-validation.JPG)
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Lighthouse Chrome Developer Tools
+![alt](readme-images/lighthouse.JPG)
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### Testing User Stories
+##### As a First Time Visitor, I want to...
+- Easily understand the content in order to find the information I'm looking for.
+    - Webpage is well structured and sections are presented clearly to the user.
+![alt](readme-images/hero-header.JPG)
+![alt](readme-images/countries-section.JPG)
+![alt](readme-images/footer.JPG)
+- Easily navigate and find content through the website in an user-friendly way.
+    - Navigation bar allows user to move through different sections of the website.
+![alt](readme-images/nav-bar.JPG)
+- Find visual resources that support and complement the content.
+    - Images are displayed to support text.
+![alt](readme-images/festival-card.JPG)
+- Have the possibility to get in touch with EDMfestivalsEU and have access to their Social Media links.
+    - Get in touch page accessible from navigation bar.
+![alt](readme-images/nav-bar.JPG)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+##### As a Returning Visitor, I want to...
+- Find the familiar interface and layout which I already experienced.
+    - Layout is easy to understand, user friendly and intuitive.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Further testing
+- The Website has been tested in all different screen devices from Google Developer Tools.
+- The Website has been viewed on a variety of devices and screen sizes.
+- The Website has been tested on Google Chrome, Internet Explorer, Safari and Microsoft Edge.
+- All links have been tested
+- All locations on Maps have been tested.
+- Interactivity has been tested.
+- EmailJS functionality has been tested.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Fixed bugs
+Many bugs were encountered on the way. The majority of them were fixed with the help of the Slack Code Institute community and Stack Overflow community. Some of the most challenging bugs were:
+- On mobile screen, hamburger icon expands when clicked, but will not go to its original state when clicked again: fixed by removing doubled bootstrap.js script.
+- Images making the page overflow on small screen devices: fixed structure of divs and apply position attributes with the help of Google Developer Tools.
 
-------
+## Deployment
+### GitHub Pages
 
-## FAQ about the uptime script
+The project was deployed to GitHub Pages using the following steps...
 
-**Why have you added this script?**
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/marctell92/boundless)
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site [link](https://marctell92.github.io/boundless/) in the "GitHub Pages" section.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+### Forking the GitHub Repository
 
-**How will this affect me?**
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/marctell92/boundless)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+### Making a Local Clone
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/marctell92/boundless)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
 
 ```
-pkill uptime.sh
-rm .vscode/uptime.sh
+$ git clone https://github.com/marctell92/boundless
 ```
 
-**Anything more?**
+7. Press Enter. Your local clone will be created.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+```
+$ git clone https://github.com/marctell92/boundless
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
 
----
+## Credits
+- All code has strong inspiration from all learning material given by Code Institute.
+- Multiple pieces of code have been taken from Bootstrap Library and modified to fit the design needs.
 
-Happy coding!
+### Content
+- README.md was strongly inspired by the Sample README from user lechien73 on GitHub, sample given by the Code Institute Mentor Team.
+- Deployment section of the README.md was copied from the above mentioned Sample README.
+
+### Media
+- All images were obtained via Google Images, using the Usage Rights tools to make sure all of them had Creative Commons licenses.
+
+### Acknowledgements
+- Code Institue Tutor Support and Mentor Team. 

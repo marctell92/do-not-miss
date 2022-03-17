@@ -3,49 +3,160 @@
 
 <div class="row card-panel grey lighten-5">
   <form action="{{ url_for('search') }}" method="post" class="col s12">
-      <div class="row valign-wrapper center-align">
-          <div class="input-field col s12 m8">
-              <i class="fas fa-search prefix"></i>
-              <input type="text" name="query" id="query" minlength="3" class="validate" required>
-              <label for="query">Search Festivals</label>
-          </div>
-          <div class="col s12 m4">
-              <a href="{{ url_for('get_festivals') }}" class="red btn text-shadow">Reset</a>
-              <button type="submit" class="btn text-shadow">
-                  <i class="fas fa-search left"></i> Search
-              </button>
-          </div>
+    <div class="row valign-wrapper center-align">
+      <div class="input-field col s12 m8">
+        <i class="fas fa-search prefix"></i>
+        <input type="text" name="query" id="query" minlength="3" class="validate" required>
+        <label for="query">Search Festivals</label>
       </div>
+      <div class="col s12 m4">
+        <a href="{{ url_for('get_festivals') }}" class="red btn text-shadow">Reset</a>
+        <button type="submit" class="btn text-shadow">
+          <i class="fas fa-search left"></i> Search
+        </button>
+      </div>
+    </div>
   </form>
 </div>
 
-{% if tasks|length > 0 %}    
+{% if festivals|length > 0 %}
 <ul class="collapsible">
-        {% for festival in festivals %}
-        <li>
-          <div class="collapsible-header">
-              <i class="fas fa-caret-down"></i>
-              <p><strong>{{ festival.festival_name }}</strong> {{ festival.festival_dates }}</p>
-              {% if session.user == "marctell92" %}
-              <div class="col s3">
-                <a href="{{ url_for('edit_festival', festival_id=festival._id) }}" class="btn-small">Edit</a>    
-              </div>
-              <div class="col s3">
-                <a href="{{ url_for('delete_festival', festival_id=festival._id) }}" class="btn-small">Delete</a>    
-              </div>              
-              {% endif %}
-          </div>
-          <div class="collapsible-body">
-              <p>Location: {{ festival.festival_location }}</p>
-              <p>Lineup: {{ festival.festival_djs }}</p>
-            </div>
-        </li>
-        {% endfor %}
-
-    </ul>
-    {% else %}
-        <h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+  <h3>Belgium</h3>
+  {% for festival in festivals %}
+  <li>
+    {% if festival.country_name == "Belgium" %}
+    <div class="collapsible-header">
+      <i class="fas fa-caret-down"></i>
+      <p><strong>{{ festival.festival_name }}</strong> {{ festival.festival_dates }}</p>
+      {% if session.user == "marctell92" %}
+      <div class="col s3">
+        <a href="{{ url_for('edit_festival', festival_id=festival._id) }}" class="btn-small">Edit</a>
+      </div>
+      <div class="col s3">
+        <a href="{{ url_for('delete_festival', festival_id=festival._id) }}" class="btn-small">Delete</a>
+      </div>
+      {% endif %}
+    </div>
     {% endif %}
-                     
+    <div class="collapsible-body">
+      <p>Location: {{ festival.festival_location }}</p>
+      <p>Lineup: {{ festival.festival_djs }}</p>
+    </div>
+  </li>
+  {% endfor %}
+
+</ul>
+<ul class="collapsible">
+  <h3>Croatia</h3>
+  {% for festival in festivals %}
+  <li>
+    {% if festival.country_name == "Croatia" %}
+    <div class="collapsible-header">
+      <i class="fas fa-caret-down"></i>
+      <p><strong>{{ festival.festival_name }}</strong> {{ festival.festival_dates }}</p>
+      {% if session.user == "marctell92" %}
+      <div class="col s3">
+        <a href="{{ url_for('edit_festival', festival_id=festival._id) }}" class="btn-small">Edit</a>
+      </div>
+      <div class="col s3">
+        <a href="{{ url_for('delete_festival', festival_id=festival._id) }}" class="btn-small">Delete</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="collapsible-body">
+      <p>Location: {{ festival.festival_location }}</p>
+      <p>Lineup: {{ festival.festival_djs }}</p>
+    </div>
+  </li>
+  {% endfor %}
+
+</ul>
+<ul class="collapsible">
+  <h3>France</h3>
+  {% for festival in festivals %}
+  <li>
+    {% if festival.country_name == "France" %}
+    <div class="collapsible-header">
+      <i class="fas fa-caret-down"></i>
+      <p><strong>{{ festival.festival_name }}</strong> {{ festival.festival_dates }}</p>
+      {% if session.user == "marctell92" %}
+      <div class="col s3">
+        <a href="{{ url_for('edit_festival', festival_id=festival._id) }}" class="btn-small">Edit</a>
+      </div>
+      <div class="col s3">
+        <a href="{{ url_for('delete_festival', festival_id=festival._id) }}" class="btn-small">Delete</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="collapsible-body">
+      <p>Location: {{ festival.festival_location }}</p>
+      <p>Lineup: {{ festival.festival_djs }}</p>
+    </div>
+  </li>
+  {% endfor %}
+
+</ul>
+<ul class="collapsible">
+  <h3>Netherlands</h3>
+  {% for festival in festivals %}
+  <li>
+    {% if festival.country_name == "Netherlands" %}
+    <div class="collapsible-header">
+      <i class="fas fa-caret-down"></i>
+      <p><strong>{{ festival.festival_name }}</strong> {{ festival.festival_dates }}</p>
+      {% if session.user == "marctell92" %}
+      <div class="col s3">
+        <a href="{{ url_for('edit_festival', festival_id=festival._id) }}" class="btn-small">Edit</a>
+      </div>
+      <div class="col s3">
+        <a href="{{ url_for('delete_festival', festival_id=festival._id) }}" class="btn-small">Delete</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="collapsible-body">
+      <p>Location: {{ festival.festival_location }}</p>
+      <p>Lineup: {{ festival.festival_djs }}</p>
+    </div>
+  </li>
+  {% endfor %}
+
+</ul>
+<ul class="collapsible">
+  <h3>Spain</h3>
+  {% for festival in festivals %}
+  <li>
+    {% if festival.country_name == "Spain" %}
+    <div class="collapsible-header">
+      <i class="fas fa-caret-down"></i>
+      <p><strong>{{ festival.festival_name }}</strong> {{ festival.festival_dates }}</p>
+      {% if session.user == "marctell92" %}
+      <div class="col s3">
+        <a href="{{ url_for('edit_festival', festival_id=festival._id) }}" class="btn-small">Edit</a>
+      </div>
+      <div class="col s3">
+        <a href="{{ url_for('delete_festival', festival_id=festival._id) }}" class="btn-small">Delete</a>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="collapsible-body">
+      <p>Location: {{ festival.festival_location }}</p>
+      <p>Lineup: {{ festival.festival_djs }}</p>
+    </div>
+  </li>
+  {% endfor %}
+
+</ul>
+
+
+
+
+{% else %}
+<h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+{% endif %}
+
 
 {% endblock %}
