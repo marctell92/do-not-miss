@@ -146,6 +146,13 @@ def delete_festival(festival_id):
     return redirect(url_for("get_festivals"))
 
 
+
+@app.route("/get_countries")
+def get_countries():
+    countries = list(mongo.db.countries.find().sort("country_name", 1))
+    return render_template("countries.html", countries=countries)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

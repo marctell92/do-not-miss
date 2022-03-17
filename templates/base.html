@@ -24,7 +24,9 @@
                     {% if session.user %}
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <li><a href="{{ url_for('add_festival') }}">Add Festival</a></li>
-                        <li><a href="#">Add Country</a></li>
+                        {% if session.user|lower == "marctell92"|lower %}
+                            <li><a href="{{ url_for('get_countries') }}">Manage Countries</a></li>
+                        {% endif %}
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}
                         <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -41,7 +43,7 @@
             {% if session.user %}
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_festival') }}">Add Festival</a></li>
-                <li><a href="#">Add Country</a></li>
+                <li><a href="{{ url_for('get_countries') }}">Manage Countries</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
