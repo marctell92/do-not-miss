@@ -19,7 +19,7 @@
                         <span class="card-title">{{ country.country_name }}</span>
                     </div>
                     <div class="card-action">
-                        <a href="#" class="btn">Edit</a>
+                        <a href="{{ url_for('edit_country', country_id=country._id) }}" class="btn">Edit</a>
                         <a href="#" class="btn">Delete</a>
                     </div>
                 </div>
