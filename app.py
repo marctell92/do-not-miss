@@ -139,6 +139,13 @@ def edit_festival(festival_id):
         "edit_festival.html", festival=festival, countries=countries)
 
 
+@app.route("/delete_festival/<festival_id>")
+def delete_festival(festival_id):
+    mongo.db.festivals.delete_one({"_id": ObjectId(festival_id)})
+    flash("Festival successfully deleted")
+    return redirect(url_for("get_festivals"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
