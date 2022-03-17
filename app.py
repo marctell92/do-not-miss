@@ -180,6 +180,13 @@ def edit_country(country_id):
     return render_template("edit_country.html", country=country)
 
 
+@app.route("/delete_country/<country_id>")
+def delete_country(country_id):
+    mongo.db.countries.delete_one({"_id": ObjectId(country_id)})
+    flash("Country successfully deleted")
+    return redirect(url_for("get_countries"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
