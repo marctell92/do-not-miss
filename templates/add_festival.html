@@ -1,63 +1,64 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add Festival</h3>
+<h3 class="center-align">Add Festival</h3>
 
-    <div class="row card-panel grey lighten-5">
-        <form class="col s12" method="POST" action="{{ url_for('add_festival') }}">
-            <div class="row">
-				<div class="input-field col s12">
-                    <i class="fas fa-folder-open prefix"></i>
-					<select id="country_name" name="country_name" class="validate" required>
-                        <option value="" disabled selected>Choose Country</option>
-                        {% for country in countries %}
-                            <option value="{{ country.country_name }}">{{ country.country_name }}</option>
-                        {% endfor %}
-                    </select>
-					<label for="country">Festival Country</label>
-				</div>
-			</div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="festival_name" name="festival_name" minlength="2" maxlength="50"
-                        type="text" class="validate" required>
-                    <label for="festival_name">Festival Name</label>
-                </div>
+<div class="row card-panel grey lighten-5">
+    <form class="col s12" method="POST" action="{{ url_for('add_festival') }}">
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix"></i>
+                <select id="country_name" name="country_name" class="validate" required>
+                    <option value="" disabled selected>Choose Country</option>
+                    {% for country in countries %}
+                    <option value="{{ country.country_name }}">{{ country.country_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="country">Festival Country</label>
             </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="festival_location" placeholder="City hosting the festival" name="festival_location" minlength="2" maxlength="50"
-                        type="text" class="validate" required>
-                    <label for="festival_location">Festival Location</label>
-                </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pencil-alt prefix"></i>
+                <input id="festival_name" name="festival_name" minlength="2" maxlength="50" type="text" class="validate"
+                    required>
+                <label for="festival_name">Festival Name</label>
             </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pencil-alt prefix"></i>
+                <input id="festival_location" placeholder="City hosting the festival" name="festival_location"
+                    minlength="2" maxlength="50" type="text" class="validate" required>
+                <label for="festival_location">Festival Location</label>
+            </div>
+        </div>
 
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-calendar-alt prefix"></i>
-                    <input id="festival_dates" placeholder="Starting date" name="festival_dates" type="text" class="datepicker validate" required>
-                    <label for="festival_date">Festival Date</label>
-                </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-calendar-alt prefix"></i>
+                <input id="festival_dates" placeholder="Starting date" name="festival_dates" type="text"
+                    class="datepicker validate" required>
+                <label for="festival_date">Festival Date</label>
             </div>
-			<div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-align-left prefix"></i>
-                    <textarea id="festival_djs" placeholder="List DJ's separated by comas" name="festival_djs" minlength="3"
-                        maxlength="300" class="materialize-textarea validate" required></textarea>
-                    <label for="festival_djs">Festival Lineup</label>
-                </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-align-left prefix"></i>
+                <textarea id="festival_djs" placeholder="List DJ's separated by comas" name="festival_djs" minlength="3"
+                    maxlength="300" class="materialize-textarea validate" required></textarea>
+                <label for="festival_djs">Festival Lineup</label>
             </div>
-            <!-- submit button -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large">
-                        Add Festival <i class="fas fa-plus-square right"></i>
-                    </button>
-                </div>
+        </div>
+        <!-- submit button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn-large">
+                    Add Festival <i class="fas fa-plus-square right"></i>
+                </button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
